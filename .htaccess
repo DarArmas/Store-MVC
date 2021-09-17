@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+#Activar rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost:8080/master-php/proyecto-php-poo/error/
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+#         ^(PON AQUI $1)/(PON AQUI $2)+
+#ESTO TE VA AFECTAR EN TODOS LOS ENLACES DE TU PROYECTO
+   
+
+
+</IfModule>
